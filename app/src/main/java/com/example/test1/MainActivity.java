@@ -1,7 +1,8 @@
 package com.example.test1;
 
+import android.content.Intent;
 import android.os.Bundle;
-
+import android.os.Handler;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -20,6 +21,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Handler timer = new Handler();
+        timer.postDelayed(new Runnable(){
+            public void run(){
+                Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                startActivity(intent);
+                finish();
+            }
+        },2000);
 
     }
 
