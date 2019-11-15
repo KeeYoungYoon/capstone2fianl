@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".record_view">
+
+    <Button
+        android:id="@+id/back_to_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginLeft="156dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="157dp"
+        android:layout_marginRight="157dp"
+        android:layout_marginBottom="48dp"
+        android:gravity="center"
+        android:text="돌아가기"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/record_detail" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="375dp"
+        android:layout_height="441dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/record_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="230dp"
+            android:layout_height="131dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="189dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/layer"
+                android:gravity="center"
+                android:text="급가속 횟수"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="174dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/layer"
+                android:gravity="center"
+                android:text="0회/시간"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="194dp"
+                android:layout_height="48dp"
+                android:background="@drawable/layer"
+                android:gravity="center"
+                android:text="급감속 횟수"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="159dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/layer"
+                android:gravity="center"
+                android:text="0회/시간"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="200dp"
+                android:layout_height="46dp"
+                android:background="@drawable/layer"
+                android:gravity="center"
+                android:text="과속방지턱 과속 횟수"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="159dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/layer"
+                android:gravity="center"
+                android:text="0회/시간"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="112dp"
+            android:background="@drawable/layer" />
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
