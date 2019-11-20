@@ -41,13 +41,37 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
-            android:layout_width="230dp"
-            android:layout_height="131dp">
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="200dp"
+                android:layout_height="43dp"
+                android:gravity="center"
+                android:background="@drawable/layer"
+                android:text="누적 과속 횟수"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="159dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/layer"
+                android:gravity="center"
+                android:textColor="@android:color/background_dark"
+                android:textSize="20sp"
+                android:text="0회/시간" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="189dp"
-                android:layout_height="match_parent"
+                android:layout_width="199dp"
+                android:layout_height="43dp"
                 android:background="@drawable/layer"
                 android:gravity="center"
                 android:text="누적 급가속 횟수"
@@ -73,7 +97,7 @@
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="194dp"
-                android:layout_height="48dp"
+                android:layout_height="43dp"
                 android:gravity="center"
                 android:background="@drawable/layer"
                 android:text="누적 급감속 횟수"
@@ -98,7 +122,7 @@
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="200dp"
-                android:layout_height="46dp"
+                android:layout_height="43dp"
                 android:gravity="center"
                 android:background="@drawable/layer"
                 android:text="과속방지턱 과속 횟수"
