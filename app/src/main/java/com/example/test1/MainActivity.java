@@ -1,6 +1,7 @@
 package com.example.test1;
 
 import android.content.Intent;
+import android.hardware.SensorEventListener;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -49,6 +50,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public static class driving_record {
+    public static class driving_record{
     }
 }
