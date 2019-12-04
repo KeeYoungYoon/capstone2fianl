@@ -12,10 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
         android:layout_marginLeft="160dp"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="160dp"
         android:layout_marginRight="160dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="60dp"
         android:gravity="center"
         android:textColor="@android:color/background_dark"
         android:textOff="주행시작"
@@ -23,10 +23,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
 
     <ImageView
         android:id="@+id/imageView4"
@@ -34,12 +34,16 @@
         android:layout_height="473dp"
         android:layout_marginStart="17dp"
         android:layout_marginLeft="17dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="17dp"
         android:layout_marginRight="17dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toTopOf="@+id/driving"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/driving_record_view" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
