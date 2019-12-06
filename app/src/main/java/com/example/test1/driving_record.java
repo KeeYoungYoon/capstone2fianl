@@ -98,17 +98,17 @@ public class driving_record extends AppCompatActivity implements SensorEventList
             float speed=location.getSpeed();
             speed*=3.6;
             String provider = location.getProvider();   //위치제공자
+            String s1="network";
             //Gps 위치제공자에 의한 위치변화. 오차범위가 좁다.
             //Network 위치제공자에 의한 위치변화
             //Network 위치는 Gps에 비해 정확도가 많이 떨어진다.
         //    tv.setText("위치정보 : " + provider + "\n위도 : " + longitude + "\n경도 : " + latitude
            //         + "\n고도 : " + altitude + "\n정확도 : "  + accuracy+"\n가속도"+acc_data);
-
-            String now = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-            String contents = "데이터 시간: "+now+"\t위치정보 : " + provider + "\t위도 : " + longitude + "\t경도 : " + latitude+"\t속도 : " + speed+"\t가속도 : " + acc_data+"\n";
-
-            WriteTextFile(foldername, filename, contents);
-
+            if(!s1.equals(provider)) {
+                String now = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+                String contents = "데이터 시간: " + now + "\t위치정보 : " + provider + "\t위도 : " + longitude + "\t경도 : " + latitude + "\t속도 : " + speed + "\t가속도 : " + acc_data + "\n";
+                WriteTextFile(foldername, filename, contents);
+            }
         }
         public void onProviderDisabled(String provider) {
             // Disabled시
