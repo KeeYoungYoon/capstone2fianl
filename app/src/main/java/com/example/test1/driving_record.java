@@ -106,7 +106,7 @@ public class driving_record extends AppCompatActivity implements SensorEventList
            //         + "\n고도 : " + altitude + "\n정확도 : "  + accuracy+"\n가속도"+acc_data);
             if(!s1.equals(provider)) {
                 String now = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-                String contents = "데이터 시간: " + now + "\t위치정보 : " + provider + "\t위도 : " + longitude + "\t경도 : " + latitude + "\t속도 : " + speed + "\t가속도 : " + acc_data + "\n";
+                String contents = "데이터 시간: " + now + "\t위치정보 : " + provider + "\t위도 : " +  latitude + "\t경도 : " + longitude + "\t속도 : " + speed + "\t가속도 : " + acc_data + "\n";
                 WriteTextFile(foldername, filename, contents);
             }
         }
