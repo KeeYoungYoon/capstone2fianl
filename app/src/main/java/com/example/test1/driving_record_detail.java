@@ -56,8 +56,9 @@ public class driving_record_detail extends AppCompatActivity
         LatLng DEST=new LatLng(37.48354974741023, 127.08220042849793);
         mMap = googleMap;
         try {
+            String foldername = Environment.getExternalStorageDirectory().getAbsolutePath()+"/TestLog";
            //System.out.println(getExternalFilesDir(null)+"/format_example_en.txt");
-            File file = new File(getExternalFilesDir(null)+"/format_example_en.txt");//파일의 경로, 추후 수정. 임시 데이터 위치에서 진행.
+            File file = new File(foldername+"/result.txt");//파일의 경로, 추후 수정. 임시 데이터 위치에서 진행.
             //파일의 경우 핸드폰에 있는 txt파일을 읽어오도록 함. 경로의 경우 /storage/emulated/0/Android/data/com.example.test1/files/format_example_en.txt
             FileReader filereader = new FileReader(file);
             BufferedReader bufReader = new BufferedReader(filereader);
