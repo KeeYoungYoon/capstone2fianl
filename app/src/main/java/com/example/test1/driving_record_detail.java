@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.graphics.Color;
+import android.content.Intent;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -32,14 +33,19 @@ public class driving_record_detail extends AppCompatActivity
     //private LatLng startLatLng = new LatLng(0, 0);        //polyline 시작점
     //private LatLng endLatLng = new LatLng(0, 0);        //polyline 끝점
     Button back_to_main;
+    int text_count=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent intent = getIntent();
+        String tcount = intent.getStringExtra("count");
+        text_count=Integer.parseInt(tcount);
         setContentView(R.layout.driving_record_detail);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         back_to_main = findViewById(R.id.back_to_main);
+
 
         back_to_main.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,9 +74,9 @@ public class driving_record_detail extends AppCompatActivity
                 System.out.println(line);
                 if(line.contains("time")) {
                     count = Integer.parseInt(line.replaceFirst("time", ""));//System.out.println(line.replaceFirst("time", ""));
-                    if(count!=0) continue;//TODO:0말고 앞 activity에서 넘어온 값을 줘야 함.
                 }
-                else if(line.charAt(0)>='0' && line.charAt(0)<'9'){
+                if(count!=text_count) continue;//TODO:0말고 앞 activity에서 넘어온 값을 줘야 함.
+                if(!line.contains("time") && line.charAt(0)>='0' && line.charAt(0)<'9'){
                     String[] line_array = line.split("\\s+");//3,4
                     float a, b;
                     String tmp;
@@ -114,7 +120,7 @@ public class driving_record_detail extends AppCompatActivity
         }
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(DEST));
-        mMap.animateCamera(CameraUpdateFactory.zoomTo(12));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(14));
 
        // Polyline polyline1 = mMap.addPolyline(new PolylineOptions().add(SOGANG, DEST).width(5).color(Color.RED));
     }
