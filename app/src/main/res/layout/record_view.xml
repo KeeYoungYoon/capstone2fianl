@@ -76,7 +76,7 @@
                 android:layout_height="43dp"
                 android:background="@drawable/layer"
                 android:gravity="center"
-                android:text="과속 심야 비율"
+                android:text="과속 밤 : 낮"
                 android:textColor="@android:color/background_dark"
                 android:textSize="20sp" />
 
@@ -126,7 +126,7 @@
                 android:layout_height="43dp"
                 android:background="@drawable/layer"
                 android:gravity="center"
-                android:text="급가속 심야 비율"
+                android:text="급가속 밤 : 낮"
                 android:textColor="@android:color/background_dark"
                 android:textSize="20sp" />
 
@@ -174,7 +174,7 @@
                 android:layout_height="43dp"
                 android:background="@drawable/layer"
                 android:gravity="center"
-                android:text="급감속 심야 비율"
+                android:text="급감속 밤 : 낮"
                 android:textColor="@android:color/background_dark"
                 android:textSize="20sp" />
 
@@ -222,7 +222,7 @@
                 android:layout_height="43dp"
                 android:background="@drawable/layer"
                 android:gravity="center"
-                android:text="과속방지턱 심야 비율"
+                android:text="과속방지턱 과속 밤 : 낮"
                 android:textColor="@android:color/background_dark"
                 android:textSize="20sp" />
 

@@ -56,7 +56,7 @@ public class driving_record extends AppCompatActivity implements SensorEventList
                                 1, // 통지사이의 최소 시간간격 (miliSecond)
                                 1, // 통지사이의 최소 변경거리 (m)
                                 mLocationListener);
-
+                        WriteTextFile(foldername, filename, "1234");
                     }
                     else if(isChecked == false) {
                         lm.removeUpdates(mLocationListener);
