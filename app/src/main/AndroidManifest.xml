@@ -17,7 +17,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="" />
+            android:value="AIzaSyCLSYDIeDZwatzLKCzVFbni9SlesRt62dU" />
         <!-- ^value="api키" -->
         <activity android:name=".driving_record_detail"></activity>
         <activity android:name=".record_view" />

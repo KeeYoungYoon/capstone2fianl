@@ -161,13 +161,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout"
         app:layout_constraintBottom_toTopOf="@+id/back_to_main"
-        app:layout_constraintHorizontal_bias="0.5">
+        app:layout_constraintHorizontal_bias="0.5"
+        >
+
         <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/map"
-            tools:context=".driving_record_detail"
-            android:name="com.google.android.gms.maps.SupportMapFragment" />
+            android:layout_gravity="center|center_horizontal"
+            tools:context=".driving_record_detail" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
