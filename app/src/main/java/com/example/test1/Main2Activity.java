@@ -37,6 +37,7 @@ public class Main2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), driving_record.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -367,6 +368,7 @@ public class Main2Activity extends AppCompatActivity {
                     //System.out.println(e);
                 }
                 startActivity(intent);
+                finish();
             }
         });
     }
