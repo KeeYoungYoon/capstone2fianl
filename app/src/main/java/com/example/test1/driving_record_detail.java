@@ -9,10 +9,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.graphics.Color;
 import android.content.Intent;
+import android.widget.TableLayout;
+import android.widget.TextView;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
@@ -33,7 +37,14 @@ public class driving_record_detail extends AppCompatActivity
     //private LatLng startLatLng = new LatLng(0, 0);        //polyline 시작점
     //private LatLng endLatLng = new LatLng(0, 0);        //polyline 끝점
     Button back_to_main;
+    TableLayout tableLayout;
     int text_count=0;
+    TextView tv1;
+    TextView tv2;
+    TextView tv3;
+    TextView tv4;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +54,14 @@ public class driving_record_detail extends AppCompatActivity
         setContentView(R.layout.driving_record_detail);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-        back_to_main = findViewById(R.id.back_to_main);
 
+        back_to_main = findViewById(R.id.back_to_main);
+        tableLayout = findViewById(R.id.tableLayout);
+        tv1 = findViewById(R.id.textView10);
+        tv2 = findViewById(R.id.textView6);
+        tv3 = findViewById(R.id.textView7);
+        tv4 = findViewById(R.id.textView8);
+        mapFragment.getMapAsync(this);
 
         back_to_main.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,26 +106,51 @@ public class driving_record_detail extends AppCompatActivity
                     MarkerOptions markerOptions = new MarkerOptions();
                     markerOptions.position(new_Pin);
                     int flag=Integer.parseInt(line_array[0]);
-                    if(flag==0) markerOptions.title("급감속");
-                    if(flag==1) markerOptions.title("급가속");
-                    if(flag==2) markerOptions.title("가속");
-                    if(flag==3) markerOptions.title("방지턱");
-                    markerOptions.snippet(Integer.toString(Pin_count)+"번째 위반");
-                    if(flag==2) markerOptions.snippet(Integer.toString(Pin_count)+"번째 위반, 가속시작");
+                    if(flag==0) {
+                        markerOptions.title("급감속");
+                        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
+                    }
+                    if(flag==1) {
+                        markerOptions.title("급가속");
+                        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
+                    }
+                    if(flag==2) {
+                        markerOptions.title("과속");
+                        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET));
+                    }
+                    if(flag==3) {
+                        markerOptions.title("방지턱");
+                        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW));
+                    }
+                    markerOptions.snippet(Integer.toString(Pin_count+1)+"번째 위반");
+                    if(flag==2) markerOptions.snippet(Integer.toString(Pin_count+1)+"번째 위반, 과속끝");
                     mMap.addMarker(markerOptions);
                     if(flag==2){
                         a=Float.parseFloat(line_array[5]);
                         b=Float.parseFloat(line_array[6]);
                         LatLng tPin=new LatLng(a,b);
                         markerOptions.position(tPin);
-                        markerOptions.snippet(Integer.toString(Pin_count)+"번째 위반, 가속끝");
+                        markerOptions.snippet(Integer.toString(Pin_count+1)+"번째 위반, 과속시작");
                         mMap.addMarker(markerOptions);
-                        mMap.addPolyline(new PolylineOptions().add(tPin, new_Pin).width(5).color(Color.RED));
+                        mMap.addPolyline(new PolylineOptions().add(tPin, new_Pin).width(20).color(Color.rgb(0,0,102)));
                     }
-                    if(Pin_count==0) DEST=new_Pin;
+                    if(Pin_count==0) {
+                        DEST=new_Pin;
+                        mMap.moveCamera(CameraUpdateFactory.newLatLng(DEST));
+                        mMap.animateCamera(CameraUpdateFactory.zoomTo(14));
+                    }
                     //else mMap.addPolyline(new PolylineOptions().add(pre_Pin, new_Pin).width(5).color(Color.RED));
                     pre_Pin=new_Pin;
                     Pin_count++;
+                }
+                if(line.contains("perTime")){
+                    String[] line_array = line.split("\\s+");
+                    float tf=Float.parseFloat(line_array[2]);
+                    int ti=Math.round(tf);
+                    if(line_array[0].contains("Dec")) tv3.setText(ti+"회");
+                    if(line_array[0].contains("Inc")) tv2.setText(ti+"회");
+                    if(line_array[0].contains("Acc")) tv1.setText(ti+"회");
+                    if(line_array[0].contains("Bump")) tv4.setText(ti+"회");
                 }
             }
             bufReader.close();
@@ -118,10 +159,8 @@ public class driving_record_detail extends AppCompatActivity
         }catch(IOException e){
             System.out.println(e);
         }
-
         mMap.moveCamera(CameraUpdateFactory.newLatLng(DEST));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(14));
-
        // Polyline polyline1 = mMap.addPolyline(new PolylineOptions().add(SOGANG, DEST).width(5).color(Color.RED));
     }
     /*private void drawPath(){        //polyline을 그려주는 메소드
