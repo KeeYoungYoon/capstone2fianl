@@ -151,7 +151,7 @@ public class Main2Activity extends AppCompatActivity {
                 }
                 try{//주행기록
                     double i,j;
-                    for(num=1;num<2;num++) {
+                    for(num=1;num<100;num++) {
                         File dir = new File (foldername);
                         //디렉토리 폴더가 없으면 생성함
                         if(!dir.exists()){
@@ -176,8 +176,8 @@ public class Main2Activity extends AppCompatActivity {
                             arr[num][k][2]=arr[num][k][2].substring(arr[num][k][2].lastIndexOf(": ")+2);
                             arr[num][k][4]=arr[num][k][4].substring(arr[num][k][4].lastIndexOf(": ")+2);
                             arr[num][k][5]=arr[num][k][5].substring(arr[num][k][5].lastIndexOf(": ")+2);
-                            i=Double.valueOf(arr[num][k][2]);
-                            j=Double.valueOf(arr[num][k][3]);
+                            i=Double.valueOf(arr[num][k][3]);
+                            j=Double.valueOf(arr[num][k][2]);
                             i=Math.round(i*1000000)/1000000.0;
                             j=Math.round(j*1000000)/1000000.0;
                             farr[k][0]= Float.valueOf(arr[num][k][4]);
