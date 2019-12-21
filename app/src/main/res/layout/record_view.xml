@@ -48,21 +48,20 @@
                 android:id="@+id/textView9"
                 android:layout_width="200dp"
                 android:layout_height="43dp"
-                android:background="@drawable/layer"
                 android:gravity="center"
+                android:background="@drawable/layer"
                 android:text="누적 과속 횟수"
                 android:textColor="@android:color/background_dark"
                 android:textSize="20sp" />
-
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="159dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/layer"
                 android:gravity="center"
-                android:text="0회/시간"
                 android:textColor="@android:color/background_dark"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:text="0회/시간" />
         </TableRow>
 
         <TableRow
@@ -85,9 +84,9 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/layer"
                 android:gravity="center"
-                android:text="0회/시간"
                 android:textColor="@android:color/background_dark"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:text="0회/시간" />
 
         </TableRow>
 
@@ -99,8 +98,8 @@
                 android:id="@+id/textView3"
                 android:layout_width="194dp"
                 android:layout_height="43dp"
-                android:background="@drawable/layer"
                 android:gravity="center"
+                android:background="@drawable/layer"
                 android:text="누적 급감속 횟수"
                 android:textColor="@android:color/background_dark"
                 android:textSize="20sp" />
@@ -111,9 +110,9 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/layer"
                 android:gravity="center"
-                android:text="0회/시간"
                 android:textColor="@android:color/background_dark"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:text="0회/시간" />
         </TableRow>
 
         <TableRow
@@ -124,27 +123,26 @@
                 android:id="@+id/textView4"
                 android:layout_width="200dp"
                 android:layout_height="43dp"
-                android:background="@drawable/layer"
                 android:gravity="center"
+                android:background="@drawable/layer"
                 android:text="과속방지턱 과속 횟수"
                 android:textColor="@android:color/background_dark"
                 android:textSize="20sp" />
-
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="159dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/layer"
                 android:gravity="center"
-                android:text="0회/시간"
                 android:textColor="@android:color/background_dark"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:text="0회/시간" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="112dp"
-            android:background="@drawable/layer" />
+            android:background="@drawable/layer"/>
     </TableLayout>
 
     <Button
@@ -161,10 +159,11 @@
         android:text="기록 확인"
         android:textColor="@android:color/background_dark"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputEditText"
+        app:layout_constraintBottom_toTopOf="@+id/back_to_main"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textInputEditText"
-        app:layout_constraintTop_toTopOf="@+id/textInputEditText" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="152dp"
@@ -191,6 +190,6 @@
         app:layout_constraintEnd_toStartOf="@+id/record_detail"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout"
-        app:layout_constraintVertical_bias="0.62" />
+        app:layout_constraintVertical_bias="0.725" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
