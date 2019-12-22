@@ -75,8 +75,9 @@ public class driving_record_detail extends AppCompatActivity
     public void onMapReady(final GoogleMap googleMap) {
         int count=0;
         int Pin_count=0;
-        LatLng DEST=new LatLng(37.48354974741023, 127.08220042849793);
+        LatLng DEST=new LatLng(37.48350272758209, 127.08398001395624);
         mMap = googleMap;
+
         try {
             String foldername = Environment.getExternalStorageDirectory().getAbsolutePath()+"/TestLog";
            //System.out.println(getExternalFilesDir(null)+"/format_example_en.txt");
@@ -85,7 +86,7 @@ public class driving_record_detail extends AppCompatActivity
             FileReader filereader = new FileReader(file);
             BufferedReader bufReader = new BufferedReader(filereader);
             String line = "";
-            LatLng pre_Pin=new LatLng(37.48354974741023, 127.08220042849793);;
+            LatLng pre_Pin=new LatLng(37.48350272758209, 127.08398001395624);;
             while ((line = bufReader.readLine()) != null) {
                 System.out.println(line);
                 if(line.contains("time")) {

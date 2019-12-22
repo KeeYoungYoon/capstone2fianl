@@ -28,7 +28,7 @@ public class driving_record extends AppCompatActivity implements SensorEventList
     ToggleButton driving;
 
     final static String foldername = Environment.getExternalStorageDirectory().getAbsolutePath()+"/TestLog";
-    final static String filename = "logfile.txt";
+    final static String filename = "11.txt";
     //  TextView tv;
     private SensorManager sensorManager;
     private float[] gravity = new float[3];
@@ -56,7 +56,7 @@ public class driving_record extends AppCompatActivity implements SensorEventList
                                 1, // 통지사이의 최소 시간간격 (miliSecond)
                                 1, // 통지사이의 최소 변경거리 (m)
                                 mLocationListener);
-                        WriteTextFile(foldername, filename, "1234");
+                        //WriteTextFile(foldername, filename, "1234");
                     }
                     else if(isChecked == false) {
                         lm.removeUpdates(mLocationListener);
